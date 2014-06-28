@@ -9,6 +9,10 @@ def palindrome?(str)
   str == str.reverse      #tests 2 strings are identical
 end
 
+# PALINDROME NOTE: Digits are the string
+# 1234 racecar 4321 should work
+# 1423 racecar 1234 should not
+
 def count_words(str)
   # YOUR CODE HERE
 end
