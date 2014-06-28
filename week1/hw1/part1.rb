@@ -5,16 +5,16 @@
 
 def palindrome?(str)
   str.downcase!           #downcase and bang
-  str.gsub!(/\W/, "")     #regex remove non-word chars
+  str.gsub!(/\W|\d/, "")  #regex remove non-word chars and digits
   str == str.reverse      #tests 2 strings are identical
 end
 
 # PALINDROME NOTE: Digits are the string
 # 1234 racecar 4321 should work
-# 1423 racecar 1234 should not
+# 1423 racecar 1234 should not unless: str.gsub!(/\W|\d/, "")
 
 def count_words(str)
-  # YOUR CODE HERE
+  counts = {}             #counts number of elements
 end
 
 
