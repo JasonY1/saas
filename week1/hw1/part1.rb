@@ -5,7 +5,7 @@
 
 def palindrome?(str)
   str.downcase!           #downcase and bang
-  str.gsub!(/\W|\d/, "")  #regex remove non-word chars and digits
+  str.gsub!(/\W/, "")     #regex remove non-word chars and digits
   str == str.reverse      #tests 2 strings are identical
 end
 
@@ -14,7 +14,15 @@ end
 # 1423 racecar 1234 should not unless: str.gsub!(/\W|\d/, "")
 
 def count_words(str)
-  counts = {}             #counts number of elements
+  counts = {}                                   #counts number of elements
+  str.downcase.scan(/\b[a-z]+/).each do |word|  #downcase/seperate words for word do
+    if counts[word].nil? then                   #condition if word exists
+      counts[word] = 1                          #word exists assign 1
+    else
+      counts[word] += 1                         #object summation
+    end
+  end
+  counts                                        #calls counts
 end
 
 
